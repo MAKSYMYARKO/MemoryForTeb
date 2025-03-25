@@ -3,8 +3,6 @@
 <head>
     <title>Memory Game Card</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="https://github.com/MAKSYMYARKO/MemoryForTeb/blob/main/style.css">
-</head>
     <style>
 body {
   display: flex;
@@ -23,15 +21,17 @@ h1 {
 }
 
 .game-board {
-  display: grid;
-  grid-template-columns: repeat(4, 100px);
-  grid-gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 440px;
   margin-bottom: 20px;
 }
 
 .card {
   width: 100px;
   height: 100px;
+  margin: 5px;
   perspective: 1000px;
   cursor: pointer;
 }
@@ -88,21 +88,23 @@ h1 {
   font-size: 18px;
   text-align: center;
   display: none;
-}/*# sourceMappingURL=style.css.map */</style>
+}
+    </style>
+</head>
 <body>
     <h1>Memory Game Card</h1>
     <div class="game-board"></div>
     <button id="reset-button">Reset Game</button>
     <div id="win-message" style="display: none;">You won! Starting a new game....</div>
 
-    <script type="text/javascript">
+    <script>
 var cards = [
     '🐵', '🐵',
     '🐱', '🐱',
     '🐶', '🐶',
     '🐭', '🐭',
     '🐷', '🐷',
-    '🦝', '🦝',
+    '🐧', '🐧',
     '🐼', '🐼',
     '🐸', '🐸'
 ];
@@ -212,6 +214,6 @@ function resetBoard() {
 document.getElementById('reset-button').onclick = createBoard;
 
 createBoard();
-</script>
+    </script>
 </body>
 </html>
